@@ -31,7 +31,7 @@ class EnergyManager:
             self.money_spent_notank += LMP * deficit_energy
 
         if excess_energy > 0:
-            potential_hydrogen = excess_energy * self.MWh_to_kg_hydrogen
+            potential_hydrogen = excess_energy / self.MWh_to_kg_hydrogen ##Changed to division
             
             hydrogen_to_store = min(potential_hydrogen, self.max_hydrogen_tank_capacity - self.hydrogen_tank)
             hydrogen_unable_to_store = potential_hydrogen - hydrogen_to_store
